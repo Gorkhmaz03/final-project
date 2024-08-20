@@ -1,0 +1,93 @@
+{
+  "footerLinks": [
+    {
+      "title": "home"
+    },
+    {
+      "title": "about"
+    },
+    {
+      "title": "contact"
+    },
+    {
+      "title": "delivery"
+    }
+  ],
+
+  "services": [
+    {
+      "id": 1,
+      "name": "espresso",
+      "description": "espressoDesc",
+      "price": 3.99,
+      "aosDelay": "100"
+    },
+    {
+      "id": 2,
+      "name": "americano",
+      "description": "americanoDesc",
+      "price": 4.49,
+      "aosDelay": "300"
+    },
+    {
+      "id": 3,
+      "name": "cappuccino",
+      "description": "cappuccinoDesc",
+      "price": 5.49,
+      "aosDelay": "500"
+    },
+    {
+      "id": 4,
+      "name": "macchiato",
+      "description": "macchiatoDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 5,
+      "name": "ristretto",
+      "description": "ristrettoDesc",
+      "price": 5.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 6,
+      "name": "freddo",
+      "description": "freddoDesc",
+      "price": 6.49,
+      "aosDelay": "500"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "adam",
+      "text": "adamDesc",
+      "img": "https://picsum.photos/seed/p1/101/101"
+    },
+    {
+      "id": 2,
+      "name": "joe",
+      "text": "joeDesc",
+      "img": "https://picsum.photos/seed/p2/102/102"
+    },
+    {
+      "id": 3,
+      "name": "david",
+      "text": "davidDesc",
+      "img": "https://picsum.photos/103/103"
+    },
+    {
+      "id": 4,
+      "name": "sarah",
+      "text": "sarahDesc",
+      "img": "https://picsum.photos/seed/p3/104/104"
+    }
+  ],
+  "menu": [
+    { "id": 1, "name": "home", "link": "/#" },
+    { "id": 2, "name": "services", "link": "/#services" },
+    { "id": 3, "name": "about", "link": "/#about" }
+  ]
+}
