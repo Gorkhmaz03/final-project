@@ -9,7 +9,7 @@ interface Testimonial {
   img: string;
 }
 
-const Testimonials: React.FC = () => {
+const TestimonialsUsers: React.FC = () => {
   const [testimonialData, setTestimonialData] = useState<Testimonial[]>([]);
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Testimonials: React.FC = () => {
           <Slider {...settings}>
             {testimonialData.map((data) => (
               <div className="my-6" key={data.id}>
-                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl  bg-primary/10 relative">
+                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl  bg-primary/10  elative">
                   <div className="mb-4">
                     <img
                       src={data.img}
@@ -90,8 +90,8 @@ const Testimonials: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4">
                     <div className="space-y-3">
-                      <p className="text-xs text-gray-500">{data.text}</p>
-                      <h1 className="text-xl font-bold text-black/80  font-cursive2">
+                      <p className="text-1xl text-gray-500">{data.text}</p>
+                      <h1 className="text-2xl font-bold text-black/80  font-cursive2">
                         {data.name}
                       </h1>
                     </div>
@@ -109,4 +109,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials;
+export default TestimonialsUsers;

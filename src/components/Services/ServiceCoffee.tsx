@@ -11,7 +11,7 @@ interface Service {
   aosDelay: string;
 }
 
-const Services: React.FC = () => {
+const ServicesCoffee: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [cart, setCart] = useState<Service[]>([]);
 
@@ -83,4 +83,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default ServicesCoffee;

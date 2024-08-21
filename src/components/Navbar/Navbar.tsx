@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Logo from "../../assets/website/coffee_logo.png";
 import { FaCoffee, FaSignInAlt, FaTimes } from "react-icons/fa";
 import { setLanguage, translate } from "../../i18n";
+import { Link, Outlet } from "react-router-dom";
+import FooterLinks from "../Footer/FooterLinks";
 
 interface MenuItem {
+  link: string;
   id: number;
   name: string;
-  link: string;
 }
 
 const Navbar: React.FC = () => {
@@ -57,15 +59,15 @@ const Navbar: React.FC = () => {
               data-aos-delay="300"
               className="flex justify-between items-center gap-4"
             >
-              <ul className="hidden sm:flex items-center gap-4 ">
+              <ul className="hidden sm:flex items-center gap-4">
                 {menuItems.map((menu) => (
                   <li key={menu.id}>
-                    <a
-                      href={menu.link}
+                    <Link
+                      to={`${menu.link}`}
                       className="inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"
                     >
                       {translate(menu.name)}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -94,7 +96,8 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-
+      <Outlet />
+      <FooterLinks />
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">

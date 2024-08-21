@@ -86,8 +86,9 @@
     }
   ],
   "menu": [
-    { "id": 1, "name": "home", "link": "/#" },
-    { "id": 2, "name": "services", "link": "/#services" },
-    { "id": 3, "name": "about", "link": "/#about" }
+    { "id": 1, "name": "home", "link": "" },
+    { "id": 2, "name": "services", "link": "/services" },
+    { "id": 3, "name": "delivery", "link": "/delivery" },
+    { "id": 4, "name": "about", "link": "/about" }
   ]
 }

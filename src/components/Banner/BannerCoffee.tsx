@@ -15,7 +15,7 @@ const bgImage = {
   height: "100%",
   width: "100%",
 };
-const Banner = () => {
+const BannerCoffee = () => {
   return (
     <>
       <span id="about"></span>
@@ -98,4 +98,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default BannerCoffee;

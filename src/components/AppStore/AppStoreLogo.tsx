@@ -11,7 +11,7 @@ const backgroundStyle = {
   height: "100%",
   width: "100%",
 };
-const AppStore = () => {
+const AppStoreLogo = () => {
   return (
     <>
       <div className="py-14" style={backgroundStyle}>
@@ -51,4 +51,4 @@ const AppStore = () => {
   );
 };
 
-export default AppStore;
+export default AppStoreLogo;

@@ -21,7 +21,7 @@ const bgImage: React.CSSProperties = {
   width: "100%",
 };
 
-const Footer: React.FC = () => {
+const FooterLinks: React.FC = () => {
   const [footerLinks, setFooterLinks] = useState<FooterLink[]>([]);
 
   useEffect(() => {
@@ -74,6 +74,8 @@ const Footer: React.FC = () => {
               <div>
                 <p className="mb-3">{translate("location")}</p>
                 <p>+994 12 555 55 55</p>
+                <p>+994 35 234 34 43</p>
+                <p>+994 23 345 54 34</p>
 
                 {/* Social links */}
                 <div className="flex items-center gap-3 mt-6">
@@ -99,4 +101,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default FooterLinks;
