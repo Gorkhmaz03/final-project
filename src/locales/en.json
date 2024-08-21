@@ -51,5 +51,21 @@
   "sarah": "Sarah Clinton",
   "sarahDesc": "A great pick-me-up that leaves a pleasant aftertaste. The rich, complex notes make this coffee a delightful experience from the first sip to the last.",
   "best": "Best Coffee For You",
-  "addToCart": "Add to Cart"
+  "addToCart": "Add to Cart",
+  "delService": "Coffee Delivery Service",
+  "fast": "Fast & Reliable Delivery",
+  "fastDesc": "At Coffee Breeze, we pride ourselves on delivering freshly brewed coffee right to your doorstep. Our delivery service is designed to be quick and convenient, ensuring that you can enjoy your favorite coffee without ever leaving your home.",
+  "time": "Delivery available 7 days a week, 8 AM - 8 PM",
+  "time2": "Fresh coffee guaranteed to be delivered within 30 minutes",
+  "time3": "Wide range of coffee varieties to choose from",
+  "time4": "Contactless delivery options for your safety",
+  "rayon": "Delivery Areas",
+  "rayonTitle": "We deliver to the following areas:",
+  "down": "Downtown",
+  "up": "Uptown",
+  "sub": "Suburban areas within a 10-mile radius",
+  "beyond": "Special arrangements for deliveries beyond our standard areas",
+  "contacts": "Contact Us",
+  "contacts2": "If you have any questions about our delivery service or need assistance, feel free to contact us at:",
+  "phone": "Phone"
 }

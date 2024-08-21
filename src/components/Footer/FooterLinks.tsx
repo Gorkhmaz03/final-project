@@ -79,16 +79,32 @@ const FooterLinks: React.FC = () => {
 
                 {/* Social links */}
                 <div className="flex items-center gap-3 mt-6">
-                  <a href="#">
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaInstagram className="text-3xl hover:text-inst duration-300" />
                   </a>
-                  <a href="#">
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaFacebook className="text-3xl hover:text-facebook duration-200" />
                   </a>
-                  <a href="#">
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaTwitter className="text-3xl hover:text-twitter duration-200" />
                   </a>
-                  <a href="#">
+                  <a
+                    href="https://t.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaTelegramPlane className="text-3xl hover:text-telegram duration-200" />
                   </a>
                 </div>

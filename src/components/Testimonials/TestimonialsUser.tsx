@@ -90,8 +90,8 @@ const TestimonialsUsers: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4">
                     <div className="space-y-3">
-                      <p className="text-1xl text-gray-500">{data.text}</p>
-                      <h1 className="text-2xl font-bold text-black/80  font-cursive2">
+                      <p className="text-xs text-gray-500">{data.text}</p>
+                      <h1 className="text-xl font-bold text-black/80  font-cursive2">
                         {data.name}
                       </h1>
                     </div>

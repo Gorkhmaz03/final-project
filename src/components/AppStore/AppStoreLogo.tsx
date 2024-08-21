@@ -28,14 +28,22 @@ const AppStoreLogo = () => {
               </h1>
               {/* img section */}
               <div className="flex flex-wrap justify-center sm:justify-start items-center">
-                <a href="#">
+                <a
+                  href="https://play.google.com/store/games"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={PlayStoreImg}
                     alt="Play store"
                     className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]"
                   />
                 </a>
-                <a href="#">
+                <a
+                  href="https://www.apple.com/app-store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={AppStoreImg}
                     alt="App store"
