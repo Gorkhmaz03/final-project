@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Logo from "../../assets/website/coffee_logo.png";
-import { FaCoffee, FaSignInAlt, FaTimes } from "react-icons/fa";
+import { FaCoffee, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { setLanguage, translate } from "../../i18n";
 import { Link, Outlet } from "react-router-dom";
 import FooterLinks from "../Footer/FooterLinks";
+import Account from "../../components/Acoount/Account";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../redux/store";
+import { persistor } from "../../redux/store";
+import { logOutAction } from "../../redux/slices/accountSlice";
 
 interface MenuItem {
   link: string;
@@ -13,10 +18,15 @@ interface MenuItem {
 
 const Navbar: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
     localStorage.getItem("language") || "en"
   );
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.account.isAuthenticated
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("/db.json")
@@ -28,26 +38,38 @@ const Navbar: React.FC = () => {
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const handleLanguageChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const newLanguage = event.target.value;
     setSelectedLanguage(newLanguage);
     setLanguage(newLanguage);
+    localStorage.setItem("language", newLanguage);
+  };
+
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      dispatch(logOutAction());
+      persistor.purge();
+    } else {
+      toggleModal();
+    }
   };
 
   return (
     <>
       <div className="bg-gradient-to-r from-secondary to-secondary/90 shadow-md bg-gray-900 text-white">
-        <div className="container py-2">
+        <div className="container mx-auto px-4 py-2 md:py-3">
           <div className="flex justify-between items-center">
             {/* Logo section */}
             <div data-aos="fade-down" data-aos-once="true">
               <a
                 href="#"
-                className="font-bold text-3xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
+                className="font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
               >
-                <img src={Logo} alt="Logo" className="w-14" />
+                <img src={Logo} alt="Logo" className="w-10 sm:w-14" />
                 Coffee Breeze
               </a>
             </div>
@@ -57,31 +79,35 @@ const Navbar: React.FC = () => {
               data-aos="fade-down"
               data-aos-once="true"
               data-aos-delay="300"
-              className="flex justify-between items-center gap-4"
+              className="hidden md:flex justify-between items-center gap-6"
             >
-              <ul className="hidden sm:flex items-center gap-4">
+              <ul className="flex items-center gap-4">
                 {menuItems.map((menu) => (
                   <li key={menu.id}>
                     <Link
-                      to={`${menu.link}`}
-                      className="inline-block text-xl py-4 px-4 text-white/70 hover:text-white duration-200"
+                      to={menu.link}
+                      className="inline-block text-sm sm:text-base py-2 sm:py-4 px-2 sm:px-4 text-white/70 hover:text-white duration-200"
                     >
                       {translate(menu.name)}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-4 items-center">
-                <button className="bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3">
+              <div className="flex items-center gap-4">
+                <button className="bg-primary/70 hover:scale-105 duration-200 text-white px-3 py-2 rounded-full flex items-center gap-2 sm:gap-3">
                   {translate("order")}
-                  <FaCoffee className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                  <FaCoffee className="text-lg sm:text-xl text-white drop-shadow-sm cursor-pointer" />
                 </button>
                 <button
-                  onClick={toggleModal}
-                  className="bg-secondary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full flex items-center gap-3"
+                  onClick={handleAuthAction}
+                  className="bg-secondary/70 hover:scale-105 duration-200 text-white px-3 py-2 rounded-full flex items-center gap-2 sm:gap-3"
                 >
-                  {translate("login")}
-                  <FaSignInAlt className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                  {isAuthenticated ? translate("logout") : translate("login")}
+                  {isAuthenticated ? (
+                    <FaSignOutAlt className="text-lg sm:text-xl text-white drop-shadow-sm cursor-pointer" />
+                  ) : (
+                    <FaSignInAlt className="text-lg sm:text-xl text-white drop-shadow-sm cursor-pointer" />
+                  )}
                 </button>
                 <select
                   value={selectedLanguage}
@@ -93,66 +119,77 @@ const Navbar: React.FC = () => {
                 </select>
               </div>
             </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={toggleMenu}
+                className="text-white focus:outline-none"
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-coffeeBrown text-white px-4 py-6">
+            <ul className="flex flex-col gap-4">
+              {menuItems.map((menu) => (
+                <li key={menu.id}>
+                  <Link
+                    to={menu.link}
+                    className="block text-lg py-2 px-4 text-white/70 hover:text-white duration-200"
+                    onClick={toggleMenu}
+                  >
+                    {translate(menu.name)}
+                  </Link>
+                </li>
+              ))}
+              <div className="flex flex-col gap-4 mt-4">
+                <button className="bg-primary/70 hover:scale-105 duration-200 w-1/3 text-white px-4 py-2 rounded-full flex items-center gap-3">
+                  {translate("order")}
+                  <FaCoffee className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                </button>
+                <button
+                  onClick={handleAuthAction}
+                  className="bg-primary/70 hover:scale-105 duration-200 text-white px-4 py-2 rounded-full w-1/3 flex items-center gap-3"
+                >
+                  {isAuthenticated ? translate("logout") : translate("login")}
+                  {isAuthenticated ? (
+                    <FaSignOutAlt className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                  ) : (
+                    <FaSignInAlt className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                  )}
+                </button>
+                <select
+                  value={selectedLanguage}
+                  onChange={handleLanguageChange}
+                  className="bg-primary/70 w-1/3 rounded-full text-white px-4 py-2  border border-coffeeDark outline-none cursor-pointer shadow-md transition-colors duration-300 hover:bg-coffeeDark focus:ring-2 focus:ring-coffee-light focus:border-coffeeLight"
+                >
+                  <option value="en">English</option>
+                  <option value="ru">Русский</option>
+                </select>
+              </div>
+            </ul>
+          </div>
+        )}
       </div>
       <Outlet />
       <FooterLinks />
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 relative">
-            <button
-              onClick={toggleModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
-            >
-              <FaTimes />
-            </button>
-            <h2 className="text-xl font-bold mb-4">
-              {translate("login_or_register")}
-            </h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">
-                  {translate("email")}
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded"
-                  placeholder={translate("email")}
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">
-                  {translate("password")}
-                </label>
-                <input
-                  type="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded"
-                  placeholder={translate("password")}
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-primary text-white px-4 py-2 rounded hover:bg-primary/80"
-              >
-                {translate("login_button")}
-              </button>
-              <div className="mt-4">
-                <p className="text-sm">
-                  {translate("dont_have_account")}{" "}
-                  <button
-                    type="button"
-                    className="text-primary hover:underline"
-                  >
-                    {translate("register")}
-                  </button>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+      <Account isModalOpen={isModalOpen} toggleModal={toggleModal} />
     </>
   );
 };

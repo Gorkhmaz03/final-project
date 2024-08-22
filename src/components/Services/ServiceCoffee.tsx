@@ -14,6 +14,8 @@ interface Service {
 const ServicesCoffee: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [cart, setCart] = useState<Service[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const servicesPerPage = 6;
 
   useEffect(() => {
     fetch("/db.json")
@@ -27,21 +29,28 @@ const ServicesCoffee: React.FC = () => {
     alert(`${translate(service.name)} has been added to your cart.`);
   };
 
+  const indexOfLastService = currentPage * servicesPerPage;
+  const indexOfFirstService = indexOfLastService - servicesPerPage;
+  const currentServices = services.slice(
+    indexOfFirstService,
+    indexOfLastService
+  );
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
     <>
       <span id="services"></span>
       <div className="py-10">
         <div className="bg-primary/10">
-          {/* Heading section  */}
           <div className="text-center mb-20">
             <h1 className="text-4xl font-bold font-cursive text-gray-800">
               {translate("best")}
             </h1>
           </div>
 
-          {/* Services Card section  */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 md:gap-10 place-items-center">
-            {services.map((service) => (
+            {currentServices.map((service) => (
               <div
                 key={service.id}
                 data-aos="fade-up"
@@ -76,6 +85,29 @@ const ServicesCoffee: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Pagination */}
+          <div className="flex justify-center mt-10">
+            <ul className="flex list-none">
+              {Array.from(
+                { length: Math.ceil(services.length / servicesPerPage) },
+                (_, index) => (
+                  <li key={index} className="mx-1">
+                    <button
+                      onClick={() => paginate(index + 1)}
+                      className={`px-3 py-1 rounded-full ${
+                        currentPage === index + 1
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-700"
+                      }`}
+                    >
+                      {index + 1}
+                    </button>
+                  </li>
+                )
+              )}
+            </ul>
           </div>
         </div>
       </div>

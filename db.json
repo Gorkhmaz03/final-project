@@ -7,7 +7,7 @@
       "title": "about"
     },
     {
-      "title": "contact"
+      "title": "services"
     },
     {
       "title": "delivery"
@@ -20,14 +20,14 @@
       "name": "espresso",
       "description": "espressoDesc",
       "price": 3.99,
-      "aosDelay": "100"
+      "aosDelay": "500"
     },
     {
       "id": 2,
       "name": "americano",
       "description": "americanoDesc",
       "price": 4.49,
-      "aosDelay": "300"
+      "aosDelay": "500"
     },
     {
       "id": 3,
@@ -55,6 +55,174 @@
       "name": "freddo",
       "description": "freddoDesc",
       "price": 6.49,
+      "aosDelay": "500"
+    },
+    {
+      "id": 7,
+      "name": "latte",
+      "description": "latteDesc",
+      "price": 4.89,
+      "aosDelay": "500"
+    },
+    {
+      "id": 8,
+      "name": "mocha",
+      "description": "mochaDesc",
+      "price": 5.19,
+      "aosDelay": "500"
+    },
+    {
+      "id": 9,
+      "name": "flatWhite",
+      "description": "flatWhiteDesc",
+      "price": 5.29,
+      "aosDelay": "500"
+    },
+    {
+      "id": 10,
+      "name": "cortado",
+      "description": "cortadoDesc",
+      "price": 4.69,
+      "aosDelay": "500"
+    },
+    {
+      "id": 11,
+      "name": "breve",
+      "description": "breveDesc",
+      "price": 5.79,
+      "aosDelay": "500"
+    },
+    {
+      "id": 12,
+      "name": "icedCoffee",
+      "description": "icedCoffeeDesc",
+      "price": 4.39,
+      "aosDelay": "500"
+    },
+    {
+      "id": 13,
+      "name": "frappuccino",
+      "description": "frappuccinoDesc",
+      "price": 6.89,
+      "aosDelay": "500"
+    },
+    {
+      "id": 14,
+      "name": "affogato",
+      "description": "affogatoDesc",
+      "price": 6.29,
+      "aosDelay": "500"
+    },
+    {
+      "id": 15,
+      "name": "café au lait",
+      "description": "cafeAuLaitDesc",
+      "price": 4.79,
+      "aosDelay": "500"
+    },
+    {
+      "id": 16,
+      "name": "vienna coffee",
+      "description": "viennaCoffeeDesc",
+      "price": 5.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 17,
+      "name": "turkish coffee",
+      "description": "turkishCoffeeDesc",
+      "price": 5.49,
+      "aosDelay": "500"
+    },
+    {
+      "id": 18,
+      "name": "drip coffee",
+      "description": "dripCoffeeDesc",
+      "price": 3.79,
+      "aosDelay": "500"
+    },
+    {
+      "id": 19,
+      "name": "aeroPress",
+      "description": "aeroPressDesc",
+      "price": 4.59,
+      "aosDelay": "500"
+    },
+    {
+      "id": 20,
+      "name": "siphon",
+      "description": "siphonDesc",
+      "price": 5.69,
+      "aosDelay": "500"
+    },
+    {
+      "id": 21,
+      "name": "nitro coffee",
+      "description": "nitroCoffeeDesc",
+      "price": 6.19,
+      "aosDelay": "500"
+    },
+    {
+      "id": 22,
+      "name": "cold brew",
+      "description": "coldBrewDesc",
+      "price": 5.39,
+      "aosDelay": "500"
+    },
+    {
+      "id": 23,
+      "name": "espresso tonic",
+      "description": "espressoTonicDesc",
+      "price": 6.49,
+      "aosDelay": "500"
+    },
+    {
+      "id": 24,
+      "name": "Doppio",
+      "description": "doppioDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 25,
+      "name": "Red eye",
+      "description": "redEyeDesc",
+      "price": 4.49,
+      "aosDelay": "500"
+    },
+    {
+      "id": 26,
+      "name": "Frappe",
+      "description": "frappeDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 27,
+      "name": "Shenzon",
+      "description": "shenzonDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 28,
+      "name": "Violet",
+      "description": "violetDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 29,
+      "name": "Stormsy",
+      "description": "stormsyDesc",
+      "price": 4.99,
+      "aosDelay": "500"
+    },
+    {
+      "id": 30,
+      "name": "Siddney",
+      "description": "siddneyDesc",
+      "price": 4.99,
       "aosDelay": "500"
     }
   ],
@@ -90,5 +258,10 @@
     { "id": 2, "name": "services", "link": "/services" },
     { "id": 3, "name": "delivery", "link": "/delivery" },
     { "id": 4, "name": "about", "link": "/about" }
+  ],
+
+  "user": [
+    { "id": 1, "email": "gorkhmaz@gmail.com", "password": "gorkhmaz02" },
+    { "id": 2, "email": "sanan@gmail.com", "password": "sanan05" }
   ]
 }
