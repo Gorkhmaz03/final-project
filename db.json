@@ -115,28 +115,28 @@
     },
     {
       "id": 15,
-      "name": "café au lait",
+      "name": "caféAuLait",
       "description": "cafeAuLaitDesc",
       "price": 4.79,
       "aosDelay": "500"
     },
     {
       "id": 16,
-      "name": "vienna coffee",
+      "name": "viennaCoffee",
       "description": "viennaCoffeeDesc",
       "price": 5.99,
       "aosDelay": "500"
     },
     {
       "id": 17,
-      "name": "turkish coffee",
+      "name": "turkishCoffee",
       "description": "turkishCoffeeDesc",
       "price": 5.49,
       "aosDelay": "500"
     },
     {
       "id": 18,
-      "name": "drip coffee",
+      "name": "dripCoffee",
       "description": "dripCoffeeDesc",
       "price": 3.79,
       "aosDelay": "500"

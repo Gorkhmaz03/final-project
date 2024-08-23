@@ -90,5 +90,17 @@
   "breve": "Breve",
   "breveDesc": "Coffee with butter. With a smooth, creamy taste and a vibrant boost.",
   "icedCoffee": "Iced coffee",
-  "icedCoffeeDesc": "Iced coffee is made with ground coffee beans, cream, milk, and ice."
+  "icedCoffeeDesc": "Iced coffee is made with ground coffee beans, cream, milk, and ice.",
+  "frappuccino": "Frappuccino",
+  "frappuccinoDesc": "A classic latte with a smooth blend of milk and espresso.",
+  "affogato": "Affogato",
+  "affogatoDesc": "Affogato combines the rich flavor of chocolate with espresso.",
+  "caféAuLait": "Café Au Lait",
+  "cafeAuLaitDesc": "It differs from white coffee, which is coffee with cold milk.",
+  "viennaCoffee": "Vienna coffee",
+  "viennaCoffeeDesc": "Is the name of a popular traditional cream-based coffee beverage",
+  "turkishCoffee": "Turkish coffee",
+  "turkishCoffeeDesc": "Turkish coffee is a style of coffee prepared in a cezve beans.",
+  "dripCoffee": "Drip coffee",
+  "dripCoffeeDesc": "Drip coffee is made by pouring hot water onto ground coffee beans."
 }
