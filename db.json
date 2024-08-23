@@ -143,85 +143,85 @@
     },
     {
       "id": 19,
-      "name": "aeroPress",
-      "description": "aeroPressDesc",
+      "name": "arabianCoffee",
+      "description": "arabianCoffeeDesc",
       "price": 4.59,
       "aosDelay": "500"
     },
     {
       "id": 20,
-      "name": "siphon",
-      "description": "siphonDesc",
+      "name": "syphon",
+      "description": "syphonDesc",
       "price": 5.69,
       "aosDelay": "500"
     },
     {
       "id": 21,
-      "name": "nitro coffee",
+      "name": "nitroCoffee",
       "description": "nitroCoffeeDesc",
       "price": 6.19,
       "aosDelay": "500"
     },
     {
       "id": 22,
-      "name": "cold brew",
+      "name": "coldBrew",
       "description": "coldBrewDesc",
       "price": 5.39,
       "aosDelay": "500"
     },
     {
       "id": 23,
-      "name": "espresso tonic",
+      "name": "espressoTonic",
       "description": "espressoTonicDesc",
       "price": 6.49,
       "aosDelay": "500"
     },
     {
       "id": 24,
-      "name": "Doppio",
+      "name": "doppio",
       "description": "doppioDesc",
       "price": 4.99,
       "aosDelay": "500"
     },
     {
       "id": 25,
-      "name": "Red eye",
+      "name": "redEye",
       "description": "redEyeDesc",
       "price": 4.49,
       "aosDelay": "500"
     },
     {
       "id": 26,
-      "name": "Frappe",
+      "name": "frappe",
       "description": "frappeDesc",
       "price": 4.99,
       "aosDelay": "500"
     },
     {
       "id": 27,
-      "name": "Shenzon",
-      "description": "shenzonDesc",
+      "name": "lungo",
+      "description": "lungoDesc",
       "price": 4.99,
       "aosDelay": "500"
     },
     {
       "id": 28,
-      "name": "Violet",
-      "description": "violetDesc",
+      "name": "rafCoffee",
+      "description": "rafCoffeeDesc",
       "price": 4.99,
       "aosDelay": "500"
     },
     {
       "id": 29,
-      "name": "Stormsy",
-      "description": "stormsyDesc",
+      "name": "irishCoffee",
+      "description": "irishCoffeeDesc",
       "price": 4.99,
       "aosDelay": "500"
     },
     {
       "id": 30,
-      "name": "Siddney",
-      "description": "siddneyDesc",
+      "name": "romano",
+      "description": "romanoDesc",
       "price": 4.99,
       "aosDelay": "500"
     }
