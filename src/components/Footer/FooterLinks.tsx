@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebook,
   FaInstagram,
@@ -10,6 +11,7 @@ import { translate } from "../../i18n";
 
 interface FooterLink {
   title: string;
+  link: string;
 }
 
 const bgImage: React.CSSProperties = {
@@ -37,12 +39,12 @@ const FooterLinks: React.FC = () => {
         <div className="container grid md:grid-cols-3 pb-20 pt-5">
           {/* Company details */}
           <div className="py-8 px-4">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="font-semibold tracking-widest text-2xl sm:text-3xl font-cursive"
             >
               Coffee Breeze
-            </a>
+            </Link>
             <p className="pt-4">{translate("enjoy")}</p>
           </div>
 
@@ -55,12 +57,12 @@ const FooterLinks: React.FC = () => {
               <ul className="space-y-3">
                 {footerLinks.map((data, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      to={data.link}
                       className="inline-block hover:scale-105 duration-200"
                     >
                       {translate(data.title)}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

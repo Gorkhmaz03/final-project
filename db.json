@@ -1,16 +1,20 @@
 {
   "footerLinks": [
     {
-      "title": "home"
+      "title": "home",
+      "link": "/"
     },
     {
-      "title": "about"
+      "title": "about",
+      "link": "/about"
     },
     {
-      "title": "services"
+      "title": "services",
+      "link": "/services"
     },
     {
-      "title": "delivery"
+      "title": "delivery",
+      "link": "/delivery"
     }
   ],
 
@@ -150,11 +154,12 @@
     },
     {
       "id": 20,
-      "name": "syphon",
-      "description": "syphonDesc",
-      "price": 5.69,
+      "name": "doppio",
+      "description": "doppioDesc",
+      "price": 4.99,
       "aosDelay": "500"
     },
+
     {
       "id": 21,
       "name": "nitroCoffee",
@@ -178,11 +183,12 @@
     },
     {
       "id": 24,
-      "name": "doppio",
-      "description": "doppioDesc",
-      "price": 4.99,
+      "name": "syphon",
+      "description": "syphonDesc",
+      "price": 5.69,
       "aosDelay": "500"
     },
+
     {
       "id": 25,
       "name": "redEye",
