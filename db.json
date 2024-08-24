@@ -30,126 +30,126 @@
       "id": 2,
       "name": "americano",
       "description": "americanoDesc",
-      "price": 4.49,
+      "price": 15.49,
       "aosDelay": "500"
     },
     {
       "id": 3,
       "name": "cappuccino",
       "description": "cappuccinoDesc",
-      "price": 5.49,
+      "price": 45.49,
       "aosDelay": "500"
     },
     {
       "id": 4,
       "name": "macchiato",
       "description": "macchiatoDesc",
-      "price": 4.99,
+      "price": 34.99,
       "aosDelay": "500"
     },
     {
       "id": 5,
       "name": "ristretto",
       "description": "ristrettoDesc",
-      "price": 5.99,
+      "price": 25.99,
       "aosDelay": "500"
     },
     {
       "id": 6,
       "name": "freddo",
       "description": "freddoDesc",
-      "price": 6.49,
+      "price": 16.49,
       "aosDelay": "500"
     },
     {
       "id": 7,
       "name": "latte",
       "description": "latteDesc",
-      "price": 4.89,
+      "price": 24.89,
       "aosDelay": "500"
     },
     {
       "id": 8,
       "name": "mocha",
       "description": "mochaDesc",
-      "price": 5.19,
+      "price": 15.89,
       "aosDelay": "500"
     },
     {
       "id": 9,
       "name": "flatWhite",
       "description": "flatWhiteDesc",
-      "price": 5.29,
+      "price": 105.29,
       "aosDelay": "500"
     },
     {
       "id": 10,
       "name": "cortado",
       "description": "cortadoDesc",
-      "price": 4.69,
+      "price": 154.69,
       "aosDelay": "500"
     },
     {
       "id": 11,
       "name": "breve",
       "description": "breveDesc",
-      "price": 5.79,
+      "price": 35.79,
       "aosDelay": "500"
     },
     {
       "id": 12,
       "name": "icedCoffee",
       "description": "icedCoffeeDesc",
-      "price": 4.39,
+      "price": 54.39,
       "aosDelay": "500"
     },
     {
       "id": 13,
       "name": "frappuccino",
       "description": "frappuccinoDesc",
-      "price": 6.89,
+      "price": 66.89,
       "aosDelay": "500"
     },
     {
       "id": 14,
       "name": "affogato",
       "description": "affogatoDesc",
-      "price": 6.29,
+      "price": 186.29,
       "aosDelay": "500"
     },
     {
       "id": 15,
       "name": "caféAuLait",
       "description": "cafeAuLaitDesc",
-      "price": 4.79,
+      "price": 154.79,
       "aosDelay": "500"
     },
     {
       "id": 16,
       "name": "viennaCoffee",
       "description": "viennaCoffeeDesc",
-      "price": 5.99,
+      "price": 135.99,
       "aosDelay": "500"
     },
     {
       "id": 17,
       "name": "turkishCoffee",
       "description": "turkishCoffeeDesc",
-      "price": 5.49,
+      "price": 25.49,
       "aosDelay": "500"
     },
     {
       "id": 18,
       "name": "dripCoffee",
       "description": "dripCoffeeDesc",
-      "price": 3.79,
+      "price": 223.79,
       "aosDelay": "500"
     },
     {
       "id": 19,
       "name": "arabianCoffee",
       "description": "arabianCoffeeDesc",
-      "price": 4.59,
+      "price": 124.59,
       "aosDelay": "500"
     },
     {

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { translate } from "../../i18n";
 import Img2 from "../../assets/coffee2.png";
+import {
+  RangeSlider,
+  RangeSliderFilledTrack,
+  RangeSliderThumb,
+  RangeSliderTrack,
+} from "@chakra-ui/react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface Service {
   id: number;
-  img: string;
   name: string;
   description: string;
   price: number;
@@ -14,8 +20,14 @@ interface Service {
 const ServicesCoffee: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [cart, setCart] = useState<Service[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(() => {
+    const savedPage = localStorage.getItem("currentPage");
+    return savedPage ? parseInt(savedPage, 10) : 1;
+  });
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 300]);
   const servicesPerPage = 6;
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/db.json")
@@ -24,29 +36,72 @@ const ServicesCoffee: React.FC = () => {
       .catch((error) => console.error("Error fetching services:", error));
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const minPrice = params.get("minPrice");
+    const maxPrice = params.get("maxPrice");
+
+    if (minPrice && maxPrice) {
+      setPriceRange([parseFloat(minPrice), parseFloat(maxPrice)]);
+    }
+  }, [location.search]);
+
   const addToCart = (service: Service): void => {
     setCart([...cart, service]);
     alert(`${translate(service.name)} has been added to your cart.`);
   };
 
+  const handlePriceRangeChange = (values: [number, number]) => {
+    setPriceRange(values);
+    const [minPrice, maxPrice] = values;
+    const params = new URLSearchParams(location.search);
+    params.set("minPrice", minPrice.toString());
+    params.set("maxPrice", maxPrice.toString());
+    navigate({ search: params.toString() });
+  };
+
+  // Фильтрация по диапазону цен
+  const filteredServices = services.filter(
+    (service) =>
+      service.price >= priceRange[0] && service.price <= priceRange[1]
+  );
+
   const indexOfLastService = currentPage * servicesPerPage;
   const indexOfFirstService = indexOfLastService - servicesPerPage;
-  const currentServices = services.slice(
+
+  const currentServices = filteredServices.slice(
     indexOfFirstService,
     indexOfLastService
   );
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    localStorage.setItem("currentPage", pageNumber.toString());
+  };
 
   return (
     <>
       <span id="services"></span>
       <div className="py-10">
         <div className="bg-primary/10">
-          <div className="text-center mb-20">
-            <h1 className="text-4xl font-bold font-cursive text-gray-800">
+          <div className="mb-20 flex justify-between items-center">
+            <h1 className="w-[57%] text-4xl font-bold font-cursive text-gray-800 flex justify-end">
               {translate("best")}
             </h1>
+            <RangeSlider
+              width="20%"
+              min={0}
+              max={300}
+              step={10}
+              value={priceRange}
+              onChange={handlePriceRangeChange}
+            >
+              <RangeSliderTrack bg="red.100">
+                <RangeSliderFilledTrack bg="brown" />
+              </RangeSliderTrack>
+              <RangeSliderThumb boxSize={7} index={0} />
+              <RangeSliderThumb boxSize={7} index={1} />
+            </RangeSlider>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 md:gap-10 place-items-center">
@@ -91,7 +146,9 @@ const ServicesCoffee: React.FC = () => {
           <div className="flex justify-center mt-10">
             <ul className="flex list-none">
               {Array.from(
-                { length: Math.ceil(services.length / servicesPerPage) },
+                {
+                  length: Math.ceil(filteredServices.length / servicesPerPage),
+                },
                 (_, index) => (
                   <li key={index} className="mx-1">
                     <button
