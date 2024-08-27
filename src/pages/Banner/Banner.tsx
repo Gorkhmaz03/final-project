@@ -1,4 +1,3 @@
-import React from "react";
 import BannerCoffee from "../../components/Banner/BannerCoffee";
 
 const Banner = () => {

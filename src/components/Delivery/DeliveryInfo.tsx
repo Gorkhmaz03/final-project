@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTruck, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 
 const DeliveryInfo: React.FC = () => {
   return (

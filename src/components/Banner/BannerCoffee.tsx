@@ -4,7 +4,7 @@ import BgImg from "../../assets/website/coffee-texture.jpg";
 import { CiCoffeeCup } from "react-icons/ci";
 import { FaCoffee } from "react-icons/fa";
 import { GiCoffeeMug } from "react-icons/gi";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 
 const bgImage = {
   backgroundImage: `url(${BgImg})`,

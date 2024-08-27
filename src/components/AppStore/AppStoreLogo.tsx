@@ -1,7 +1,7 @@
 import AppStoreImg from "../../assets/website/app_store.png";
 import PlayStoreImg from "../../assets/website/play_store.png";
 import BgPng from "../../assets/website/coffee-beans-bg.png";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 
 const backgroundStyle = {
   backgroundImage: `url(${BgPng})`,

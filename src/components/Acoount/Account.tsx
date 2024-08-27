@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 import { FaTimes } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logInAction } from "../../redux/slices/accountSlice";

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
+
 import {
   persistStore,
   persistReducer,
@@ -12,15 +13,17 @@ import {
 } from "redux-persist";
 import { combineReducers } from "redux";
 import accountSlice from "./slices/accountSlice";
+import cartSlice from "./slices/cartSlice";
 
 const reducers = combineReducers({
   account: accountSlice,
+  cart: cartSlice,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["account"],
+  whitelist: ["account", "cart"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
@@ -36,3 +39,4 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>;

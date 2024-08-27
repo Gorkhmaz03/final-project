@@ -126,5 +126,11 @@
   "irishCoffee": "Irish coffee",
   "irishCoffeeDesc": "Is a caffeinated alcoholic drink consisting Irish whiskey and sugar.",
   "romano": "Romano",
-  "romanoDesc": "This is an espresso with lemon juice that contains with some lemon."
+  "romanoDesc": "This is an espresso with lemon juice that contains with some lemon.",
+  "item": "Item",
+  "quantity": "Quantity",
+  "price": "Price",
+  "noItems": "No items in cart",
+  "total": "Total:",
+  "cart": "Cart"
 }

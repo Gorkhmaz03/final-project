@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 import Img2 from "../../assets/coffee2.png";
 import {
   RangeSlider,
@@ -8,6 +8,8 @@ import {
   RangeSliderTrack,
 } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
 
 interface Service {
   id: number;
@@ -19,7 +21,6 @@ interface Service {
 
 const ServicesCoffee: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
-  const [cart, setCart] = useState<Service[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(() => {
     const savedPage = localStorage.getItem("currentPage");
     return savedPage ? parseInt(savedPage, 10) : 1;
@@ -28,6 +29,7 @@ const ServicesCoffee: React.FC = () => {
   const servicesPerPage = 6;
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("/db.json")
@@ -47,8 +49,9 @@ const ServicesCoffee: React.FC = () => {
   }, [location.search]);
 
   const addToCart = (service: Service): void => {
-    setCart([...cart, service]);
-    alert(`${translate(service.name)} has been added to your cart.`);
+    const cartItem = { ...service, quantity: 1 };
+    dispatch(addItem(cartItem));
+    console.log("Cart item added: ", cartItem);
   };
 
   const handlePriceRangeChange = (values: [number, number]) => {
@@ -60,7 +63,6 @@ const ServicesCoffee: React.FC = () => {
     navigate({ search: params.toString() });
   };
 
-  // Фильтрация по диапазону цен
   const filteredServices = services.filter(
     (service) =>
       service.price >= priceRange[0] && service.price <= priceRange[1]

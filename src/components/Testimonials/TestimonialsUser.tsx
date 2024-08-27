@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { translate } from "../../i18n";
+import { useLanguage } from "../../i18n.tsx";
+import en from "../../locales/en.json";
+import ru from "../../locales/ru.json";
 
 interface Testimonial {
   id: number;
@@ -8,9 +10,18 @@ interface Testimonial {
   text: string;
   img: string;
 }
+interface Translations {
+  [key: string]: string;
+}
+
+const translations: Record<string, Translations> = {
+  en: en as Translations,
+  ru: ru as Translations,
+};
 
 const TestimonialsUsers: React.FC = () => {
   const [testimonialData, setTestimonialData] = useState<Testimonial[]>([]);
+  const { currentLanguage } = useLanguage();
 
   useEffect(() => {
     fetch("/db.json")
@@ -19,13 +30,19 @@ const TestimonialsUsers: React.FC = () => {
         const translatedData = data.testimonials.map(
           (testimonial: Testimonial) => ({
             ...testimonial,
-            name: translate(testimonial.name),
-            text: translate(testimonial.text),
+            name:
+              translations[currentLanguage][
+                testimonial.name as keyof Translations
+              ] || testimonial.name,
+            text:
+              translations[currentLanguage][
+                testimonial.text as keyof Translations
+              ] || testimonial.text,
           })
         );
         setTestimonialData(translatedData);
       });
-  }, []);
+  }, [currentLanguage]);
 
   const settings = {
     dots: true,
@@ -73,14 +90,15 @@ const TestimonialsUsers: React.FC = () => {
             data-aos="fade-up"
             className="text-center text-4xl font-bold font-cursive"
           >
-            {translate("testimonials")}
+            {translations[currentLanguage]["testimonials"] || "Testimonials"}{" "}
+            {/* Başlık için çeviri */}
           </h1>
         </div>
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {testimonialData.map((data) => (
               <div className="my-6" key={data.id}>
-                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl  bg-primary/10  elative">
+                <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl  bg-primary/10  relative">
                   <div className="mb-4">
                     <img
                       src={data.img}
@@ -90,9 +108,10 @@ const TestimonialsUsers: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4">
                     <div className="space-y-3">
-                      <p className="text-xs text-gray-500">{data.text}</p>
+                      <p className="text-xs text-gray-500">{data.text}</p>{" "}
+                      {/* Çevirilen metin */}
                       <h1 className="text-xl font-bold text-black/80  font-cursive2">
-                        {data.name}
+                        {data.name} {/* Çevirilen isim */}
                       </h1>
                     </div>
                   </div>

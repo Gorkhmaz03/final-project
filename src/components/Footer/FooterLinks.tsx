@@ -7,7 +7,7 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 import FooterBg from "../../assets/website/coffee-footer.jpg";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 
 interface FooterLink {
   title: string;
@@ -29,8 +29,11 @@ const FooterLinks: React.FC = () => {
   useEffect(() => {
     fetch("/db.json")
       .then((response) => response.json())
-      .then((data) => setFooterLinks(data.footerLinks))
-      .catch((error) => console.error("Error fetching footer links:", error));
+      .then((data) => {
+        console.log(data);
+
+        setFooterLinks(data.footerLinks);
+      });
   }, []);
 
   return (

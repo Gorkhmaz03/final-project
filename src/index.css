@@ -12,6 +12,7 @@
     transform: rotate(360deg);
   }
 }
+
 .spin {
   animation: spin 40s linear infinite;
 }

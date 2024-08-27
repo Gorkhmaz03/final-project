@@ -1,5 +1,5 @@
 import HeroPng from "../../assets/coffee2.png";
-import { translate } from "../../i18n";
+import { translate } from "../../i18n.tsx";
 
 const Hero = () => {
   return (
