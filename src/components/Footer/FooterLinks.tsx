@@ -7,7 +7,7 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 import FooterBg from "../../assets/website/coffee-footer.jpg";
-import { translate } from "../../i18n.tsx";
+import { translate, useLanguage } from "../../i18n.tsx";
 
 interface FooterLink {
   title: string;
@@ -24,23 +24,30 @@ const bgImage: React.CSSProperties = {
 };
 
 const FooterLinks: React.FC = () => {
+  // Вызов useLanguage первым делом
+  const { currentLanguage } = useLanguage();
+
   const [footerLinks, setFooterLinks] = useState<FooterLink[]>([]);
 
   useEffect(() => {
-    fetch("/db.json")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-
+    const fetchFooterLinks = async () => {
+      try {
+        const response = await fetch("/db.json");
+        const data = await response.json();
         setFooterLinks(data.footerLinks);
-      });
+      } catch (error) {
+        console.error("Ошибка при загрузке ссылок в футере:", error);
+      }
+    };
+
+    fetchFooterLinks();
   }, []);
 
   return (
     <div style={bgImage} className="text-white">
       <div className="bg-black/40 min-h-[400px]">
         <div className="container grid md:grid-cols-3 pb-20 pt-5">
-          {/* Company details */}
+          {/* Данные компании */}
           <div className="py-8 px-4">
             <Link
               to="/"
@@ -51,7 +58,7 @@ const FooterLinks: React.FC = () => {
             <p className="pt-4">{translate("enjoy")}</p>
           </div>
 
-          {/* Footer links */}
+          {/* Ссылки в футере */}
           <div className="col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10">
             <div className="py-8 px-4">
               <h1 className="text-xl font-semibold sm:text-left mb-3">
@@ -71,7 +78,7 @@ const FooterLinks: React.FC = () => {
               </ul>
             </div>
 
-            {/* Company Address */}
+            {/* Адрес компании */}
             <div className="py-8 px-4 col-span-2 sm:col-auto">
               <h1 className="text-xl font-semibold sm:text-left mb-3">
                 {translate("address")}
@@ -82,7 +89,7 @@ const FooterLinks: React.FC = () => {
                 <p>+994 35 234 34 43</p>
                 <p>+994 23 345 54 34</p>
 
-                {/* Social links */}
+                {/* Социальные ссылки */}
                 <div className="flex items-center gap-3 mt-6">
                   <a
                     href="https://www.instagram.com"

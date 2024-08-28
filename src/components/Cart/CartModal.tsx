@@ -32,9 +32,7 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
   const cartItems = useSelector((state: RootState) => state.cart?.items || []);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("Cart Items Updated: ", cartItems);
-  }, [cartItems]);
+  useEffect(() => {}, [cartItems]);
 
   const handleIncreaseQuantity = (id: number) => {
     const item = cartItems.find((item: { id: number }) => item.id === id);

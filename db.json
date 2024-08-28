@@ -24,140 +24,160 @@
       "name": "espresso",
       "description": "espressoDesc",
       "price": 3.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/espressoNew.png"
     },
     {
       "id": 2,
       "name": "americano",
       "description": "americanoDesc",
       "price": 15.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/file.png"
     },
     {
       "id": 3,
       "name": "cappuccino",
       "description": "cappuccinoDesc",
       "price": 45.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/cappuchinoo.png"
     },
     {
       "id": 4,
       "name": "macchiato",
       "description": "macchiatoDesc",
       "price": 34.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/macchiato.png"
     },
     {
       "id": 5,
       "name": "ristretto",
       "description": "ristrettoDesc",
       "price": 25.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/ristretto2.png"
     },
     {
       "id": 6,
       "name": "freddo",
       "description": "freddoDesc",
       "price": 16.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/freddo.png"
     },
     {
       "id": 7,
       "name": "latte",
       "description": "latteDesc",
       "price": 24.89,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/latte.png"
     },
     {
       "id": 8,
       "name": "mocha",
       "description": "mochaDesc",
       "price": 15.89,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/moccha.png"
     },
     {
       "id": 9,
       "name": "flatWhite",
       "description": "flatWhiteDesc",
       "price": 105.29,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/breve.png"
     },
     {
       "id": 10,
       "name": "cortado",
       "description": "cortadoDesc",
       "price": 154.69,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/cortado.png"
     },
     {
       "id": 11,
       "name": "breve",
       "description": "breveDesc",
       "price": 35.79,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/breve2.png"
     },
     {
       "id": 12,
       "name": "icedCoffee",
       "description": "icedCoffeeDesc",
       "price": 54.39,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/iced-coffe.png"
     },
     {
       "id": 13,
       "name": "frappuccino",
       "description": "frappuccinoDesc",
       "price": 66.89,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/frappucino.png"
     },
     {
       "id": 14,
       "name": "affogato",
       "description": "affogatoDesc",
       "price": 186.29,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/affogato.png"
     },
     {
       "id": 15,
       "name": "caféAuLait",
       "description": "cafeAuLaitDesc",
       "price": 154.79,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/cafeAuLait.png"
     },
     {
       "id": 16,
       "name": "viennaCoffee",
       "description": "viennaCoffeeDesc",
       "price": 135.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/ristretto.png"
     },
     {
       "id": 17,
       "name": "turkishCoffee",
       "description": "turkishCoffeeDesc",
       "price": 25.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/turkish.png"
     },
     {
       "id": 18,
       "name": "dripCoffee",
       "description": "dripCoffeeDesc",
       "price": 223.79,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/flatWhite.png"
     },
     {
       "id": 19,
       "name": "arabianCoffee",
       "description": "arabianCoffeeDesc",
       "price": 124.59,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/arab.png"
     },
     {
       "id": 20,
       "name": "doppio",
       "description": "doppioDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/doppi02.png"
     },
 
     {
@@ -165,28 +185,32 @@
       "name": "nitroCoffee",
       "description": "nitroCoffeeDesc",
       "price": 6.19,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/iced-coffe.png"
     },
     {
       "id": 22,
       "name": "coldBrew",
       "description": "coldBrewDesc",
       "price": 5.39,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/cold.png"
     },
     {
       "id": 23,
       "name": "espressoTonic",
       "description": "espressoTonicDesc",
       "price": 6.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/alcohol.png"
     },
     {
       "id": 24,
       "name": "syphon",
       "description": "syphonDesc",
       "price": 5.69,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/syphon.png"
     },
 
     {
@@ -194,42 +218,49 @@
       "name": "redEye",
       "description": "redEyeDesc",
       "price": 4.49,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "/src/assets/moccha.png"
     },
+
     {
       "id": 26,
       "name": "frappe",
       "description": "frappeDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/frappe.png"
     },
     {
       "id": 27,
       "name": "lungo",
       "description": "lungoDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/lung.png"
     },
     {
       "id": 28,
       "name": "rafCoffee",
       "description": "rafCoffeeDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/raf.png"
     },
     {
       "id": 29,
       "name": "irishCoffee",
       "description": "irishCoffeeDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/irish.png"
     },
     {
       "id": 30,
       "name": "romano",
       "description": "romanoDesc",
       "price": 4.99,
-      "aosDelay": "500"
+      "aosDelay": "500",
+      "img": "src/assets/romm.png"
     }
   ],
 

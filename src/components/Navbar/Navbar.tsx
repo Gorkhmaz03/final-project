@@ -19,11 +19,11 @@ interface MenuItem {
 }
 
 const Navbar: React.FC = () => {
+  const { currentLanguage, setLanguage } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
-  const { currentLanguage, setLanguage } = useLanguage();
   const isAuthenticated = useSelector(
     (state: RootState) => state.account.isAuthenticated
   );
@@ -66,13 +66,13 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center">
             {/* Logo section */}
             <div data-aos="fade-down" data-aos-once="true">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 tracking-wider font-cursive"
               >
                 <img src={Logo} alt="Logo" className="w-10 sm:w-14" />
                 Coffee Breeze
-              </a>
+              </Link>
             </div>
 
             {/* Link section */}

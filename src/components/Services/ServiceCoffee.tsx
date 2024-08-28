@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { translate } from "../../i18n.tsx";
-import Img2 from "../../assets/coffee2.png";
 import {
   RangeSlider,
   RangeSliderFilledTrack,
@@ -17,6 +16,7 @@ interface Service {
   description: string;
   price: number;
   aosDelay: string;
+  img: string; // Добавлено поле для изображения
 }
 
 const ServicesCoffee: React.FC = () => {
@@ -51,7 +51,6 @@ const ServicesCoffee: React.FC = () => {
   const addToCart = (service: Service): void => {
     const cartItem = { ...service, quantity: 1 };
     dispatch(addItem(cartItem));
-    console.log("Cart item added: ", cartItem);
   };
 
   const handlePriceRangeChange = (values: [number, number]) => {
@@ -116,9 +115,9 @@ const ServicesCoffee: React.FC = () => {
               >
                 <div className="h-[160px]">
                   <img
-                    src={Img2}
+                    src={service.img} // Используем путь к изображению
                     alt={translate(service.name)}
-                    className="max-w-[200px] block mx-auto transform -translate-y-20 group-hover:scale-105 group-hover:rotate-6 duration-300"
+                    className="max-w-[230px] block mx-auto transform -translate-y-20 group-hover:scale-105 group-hover:rotate-6 duration-300"
                   />
                 </div>
                 <div className="p-4 text-center">
