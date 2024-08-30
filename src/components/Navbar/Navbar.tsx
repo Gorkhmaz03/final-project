@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Logo from "../../assets/website/coffee_logo.png";
 import { FaCoffee, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { useLanguage, translate, LanguageData } from "../../i18n.tsx";
@@ -19,10 +19,12 @@ interface MenuItem {
 }
 
 const Navbar: React.FC = () => {
+  const navbarRef = useRef<HTMLDivElement>(null);
   const { currentLanguage, setLanguage } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  const [navbarHeight, setNavbarHeight] = useState<number>(0);
 
   const isAuthenticated = useSelector(
     (state: RootState) => state.account.isAuthenticated
@@ -37,6 +39,10 @@ const Navbar: React.FC = () => {
       .then((data) => {
         setMenuItems(data.menu);
       });
+
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
   }, [currentLanguage]);
 
   const toggleModal = () => setIsModalOpen(!isModalOpen);
@@ -61,7 +67,10 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-secondary to-secondary/90 shadow-md bg-gray-900 text-white ">
+      <div
+        ref={navbarRef}
+        className="fixed z-10 w-full top-0 bg-gradient-to-r from-secondary to-secondary/90 shadow-md bg-gray-900 text-white"
+      >
         <div className="container mx-auto px-4 py-2 md:py-3">
           <div className="flex justify-between items-center">
             {/* Logo section */}
@@ -199,7 +208,11 @@ const Navbar: React.FC = () => {
           </div>
         )}
       </div>
-      <Outlet />
+
+      <div style={{ paddingTop: navbarHeight }}>
+        <Outlet />
+      </div>
+
       <FooterLinks />
       <Account isModalOpen={isModalOpen} toggleModal={toggleModal} />
     </>

@@ -27,7 +27,13 @@ const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-x-hidden">
       <>
-        <Suspense fallback={<h1>...Loading</h1>}>
+        <Suspense
+          fallback={
+            <h1 className="flex items-center justify-center h-[100vh] text-[50px]">
+              ...Loading
+            </h1>
+          }
+        >
           <Router>
             <Routes>
               <Route path="/" element={<Navbar />}>

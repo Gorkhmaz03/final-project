@@ -35,7 +35,6 @@ const Account: React.FC<AccountProps> = ({ isModalOpen, toggleModal }) => {
     const user = await authenticateUser(email, password);
 
     if (user) {
-      console.log("Аутентификация прошла успешно", user);
       dispatch(
         logInAction({
           email: user.email,

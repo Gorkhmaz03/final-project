@@ -91,7 +91,6 @@ const TestimonialsUsers: React.FC = () => {
             className="text-center text-4xl font-bold font-cursive"
           >
             {translations[currentLanguage]["testimonials"] || "Testimonials"}{" "}
-            {/* Başlık için çeviri */}
           </h1>
         </div>
         <div data-aos="zoom-in">
@@ -109,9 +108,8 @@ const TestimonialsUsers: React.FC = () => {
                   <div className="flex flex-col items-center gap-4">
                     <div className="space-y-3">
                       <p className="text-xs text-gray-500">{data.text}</p>{" "}
-                      {/* Çevirilen metin */}
                       <h1 className="text-xl font-bold text-black/80  font-cursive2">
-                        {data.name} {/* Çevirilen isim */}
+                        {data.name}
                       </h1>
                     </div>
                   </div>

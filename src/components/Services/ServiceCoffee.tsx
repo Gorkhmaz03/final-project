@@ -16,7 +16,7 @@ interface Service {
   description: string;
   price: number;
   aosDelay: string;
-  img: string; // Добавлено поле для изображения
+  img: string;
 }
 
 const ServicesCoffee: React.FC = () => {
@@ -115,7 +115,7 @@ const ServicesCoffee: React.FC = () => {
               >
                 <div className="h-[160px]">
                   <img
-                    src={service.img} // Используем путь к изображению
+                    src={service.img}
                     alt={translate(service.name)}
                     className="max-w-[230px] block mx-auto transform -translate-y-20 group-hover:scale-105 group-hover:rotate-6 duration-300"
                   />
