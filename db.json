@@ -217,7 +217,7 @@
       "id": 25,
       "name": "redEye",
       "description": "redEyeDesc",
-      "price": 4.49,
+      "price": 21.49,
       "aosDelay": "500",
       "img": "/src/assets/moccha.png"
     },
@@ -226,7 +226,7 @@
       "id": 26,
       "name": "frappe",
       "description": "frappeDesc",
-      "price": 4.99,
+      "price": 54.99,
       "aosDelay": "500",
       "img": "src/assets/frappe.png"
     },
@@ -234,7 +234,7 @@
       "id": 27,
       "name": "lungo",
       "description": "lungoDesc",
-      "price": 4.99,
+      "price": 17.99,
       "aosDelay": "500",
       "img": "src/assets/lung.png"
     },
@@ -242,7 +242,7 @@
       "id": 28,
       "name": "rafCoffee",
       "description": "rafCoffeeDesc",
-      "price": 4.99,
+      "price": 35.99,
       "aosDelay": "500",
       "img": "src/assets/raf.png"
     },
@@ -250,7 +250,7 @@
       "id": 29,
       "name": "irishCoffee",
       "description": "irishCoffeeDesc",
-      "price": 4.99,
+      "price": 42.99,
       "aosDelay": "500",
       "img": "src/assets/irish.png"
     },
@@ -258,7 +258,7 @@
       "id": 30,
       "name": "romano",
       "description": "romanoDesc",
-      "price": 4.99,
+      "price": 33.99,
       "aosDelay": "500",
       "img": "src/assets/romm.png"
     }
