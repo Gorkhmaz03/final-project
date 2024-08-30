@@ -117,7 +117,7 @@ const ServicesCoffee: React.FC = () => {
                   <img
                     src={service.img}
                     alt={translate(service.name)}
-                    className="max-w-[230px] block mx-auto transform -translate-y-20 group-hover:scale-105 group-hover:rotate-6 duration-300"
+                    className="max-w-[215px] block mx-auto transform -translate-y-20 group-hover:scale-105 group-hover:rotate-6 duration-300"
                   />
                 </div>
                 <div className="p-4 text-center">

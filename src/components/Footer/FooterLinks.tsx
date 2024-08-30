@@ -6,6 +6,7 @@ import {
   FaTwitter,
   FaTelegramPlane,
 } from "react-icons/fa";
+import { GrLocation } from "react-icons/gr";
 import FooterBg from "../../assets/website/coffee-footer.jpg";
 import { translate } from "../../i18n.tsx";
 
@@ -74,7 +75,11 @@ const FooterLinks: React.FC = () => {
                 {translate("address")}
               </h1>
               <div>
-                <p className="mb-3">{translate("location")}</p>
+                <div className="flex items-center gap-1 mb-3">
+                  <GrLocation />
+                  <p>{translate("location")}</p>
+                </div>
+
                 <p>+994 12 555 55 55</p>
                 <p>+994 35 234 34 43</p>
                 <p>+994 23 345 54 34</p>
