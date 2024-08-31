@@ -5,6 +5,8 @@ import {
   RangeSliderFilledTrack,
   RangeSliderThumb,
   RangeSliderTrack,
+  Text,
+  Box,
 } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -85,24 +87,28 @@ const ServicesCoffee: React.FC = () => {
       <span id="services"></span>
       <div className="py-10">
         <div className="bg-primary/10">
-          <div className="mb-20 flex justify-between items-center">
-            <h1 className="w-[57%] text-4xl font-bold font-cursive text-gray-800 flex justify-end">
+          <div className="mb-20 flex flex-col items-center">
+            <h1 className="text-4xl font-bold font-cursive text-gray-800 text-center mb-4">
               {translate("best")}
             </h1>
-            <RangeSlider
-              width="20%"
-              min={0}
-              max={300}
-              step={10}
-              value={priceRange}
-              onChange={handlePriceRangeChange}
-            >
-              <RangeSliderTrack bg="red.100">
-                <RangeSliderFilledTrack bg="brown" />
-              </RangeSliderTrack>
-              <RangeSliderThumb boxSize={7} index={0} />
-              <RangeSliderThumb boxSize={7} index={1} />
-            </RangeSlider>
+            <div className="w-full flex justify-end items-center pr-4">
+              <Box className="mr-2 text-lg">{priceRange[0]}$</Box>
+              <RangeSlider
+                width="30%"
+                min={0}
+                max={300}
+                step={10}
+                value={priceRange}
+                onChange={handlePriceRangeChange}
+              >
+                <RangeSliderTrack bg="red.100">
+                  <RangeSliderFilledTrack bg="brown" />
+                </RangeSliderTrack>
+                <RangeSliderThumb boxSize={5} index={0} />
+                <RangeSliderThumb boxSize={5} index={1} />
+              </RangeSlider>
+              <Box className="ml-2 text-lg">{priceRange[1]}$</Box>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16 md:gap-10 place-items-center">

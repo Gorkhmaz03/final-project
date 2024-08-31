@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
                   onClick={onOpen}
                   className="bg-primary/70 hover:scale-105 duration-200 text-white px-3 py-2 rounded-full flex items-center gap-2 sm:gap-3"
                 >
-                  {translate("order")}
+                  {translate("cart")}
                   <FaCoffee className="text-lg sm:text-xl text-white drop-shadow-sm cursor-pointer" />
                 </button>
                 <button
